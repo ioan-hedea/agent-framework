@@ -12,6 +12,7 @@ from ._checkpoint import (
     InMemoryCheckpointStorage,
     WorkflowCheckpoint,
 )
+from ._checkpoint_summary import WorkflowCheckpointSummary, get_checkpoint_summary
 from ._concurrent import ConcurrentBuilder
 from ._const import (
     DEFAULT_MAX_ITERATIONS,
@@ -48,9 +49,6 @@ from ._events import (
 )
 from ._executor import (
     Executor,
-    RequestInfoExecutor,
-    RequestInfoMessage,
-    RequestResponse,
     handler,
 )
 from ._function_executor import FunctionExecutor, executor
@@ -75,6 +73,12 @@ from ._magentic import (
     MagenticResponseMessage,
     MagenticStartMessage,
     StandardMagenticManager,
+)
+from ._request_info_executor import (
+    PendingRequestDetails,
+    RequestInfoExecutor,
+    RequestInfoMessage,
+    RequestResponse,
 )
 from ._runner import Runner
 from ._runner_context import (
@@ -144,6 +148,7 @@ __all__ = [
     "MagenticResponseMessage",
     "MagenticStartMessage",
     "Message",
+    "PendingRequestDetails",
     "RequestInfoEvent",
     "RequestInfoExecutor",
     "RequestInfoMessage",
@@ -163,6 +168,7 @@ __all__ = [
     "WorkflowAgent",
     "WorkflowBuilder",
     "WorkflowCheckpoint",
+    "WorkflowCheckpointSummary",
     "WorkflowContext",
     "WorkflowErrorDetails",
     "WorkflowEvent",
@@ -179,6 +185,7 @@ __all__ = [
     "WorkflowViz",
     "create_edge_runner",
     "executor",
+    "get_checkpoint_summary",
     "handler",
     "validate_workflow_graph",
 ]
